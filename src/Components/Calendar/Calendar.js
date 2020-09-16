@@ -1,15 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { ScheduleComponent, Day, Week, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 import '../../App.css'
-import { DataManager, WebApiAdaptor } from '@syncfusion/ej2-data';
 
 const Calendar = (props) => {
-    const [events, setEvents] = useState([]);
 
     var read = true;
 
     var newWholeJson = [];
-
 
     const getEvents = async () => {
         try {
@@ -29,21 +26,17 @@ const Calendar = (props) => {
                 tEndFormatted = tEndFormatted.substring(0, 19);
                 jsonData.events[i].endTime = tEndFormatted;
             }
-            // var temp = events;
-            // temp.push(jsonData);
-            // setEvents(temp);
             var json = jsonData.events;
-            for(var i = 0; i < json.length; i ++) {
+            for(var j = 0; j < json.length; j++) {
                 var newJson = {
-                    "Id": json[i].id,
-                    "Subject": json[i].name,
-                    "Description": json[i].description,
-                    "StartTime": json[i].startTime,
-                    "EndTime": json[i].endTime
+                    "Id": json[j].id,
+                    "Subject": json[j].name,
+                    "Description": json[j].description,
+                    "StartTime": json[j].startTime,
+                    "EndTime": json[j].endTime
                 }
                 newWholeJson.push(newJson);
             }
-
             console.log(newWholeJson);
         } catch (err) {
             console.error(err.message);
@@ -52,16 +45,12 @@ const Calendar = (props) => {
 
     useEffect(() => {
         getEvents();
+        // eslint-disable-next-line
     }, []);
 
     return (
         <div>
-            <ScheduleComponent height='550px' selectedDate={new Date(2020, 7, 8)} readonly={{ read }}
-                eventSettings={{
-                    dataSource: newWholeJson,
-                }}
-            >
-
+            <ScheduleComponent height='550px' selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: newWholeJson }}>
                 <Inject services={[Day, Week, Month, Agenda]} />
                 <ViewsDirective>
                     <ViewDirective option='Day' />
