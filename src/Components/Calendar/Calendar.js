@@ -50,7 +50,7 @@ const Calendar = (props) => {
 
     return (
         <div>
-            <ScheduleComponent height='550px' selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: newWholeJson }}>
+            <ScheduleComponent height='650px' currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: newWholeJson }}>
                 <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
                 <ViewsDirective>
                     <ViewDirective option='Day' />
