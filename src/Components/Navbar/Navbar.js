@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         position: 'relative',
         float: 'left',
         textDecoration: 'none',
-        color: 'black',
+        color: 'white',
         marginLeft: '45px'
     },
     navItem: {
@@ -30,7 +30,7 @@ const useStyles = makeStyles({
         fontSize: '18px',
         position: 'relative',
         float: 'right',
-        color: 'black',
+        color: 'white',
         paddingBottom: '5px',
         '&:after': {
             content: '""',
@@ -39,7 +39,7 @@ const useStyles = makeStyles({
             left: '0',
             height: '0',
             width: '0%',
-            borderBottom: '2px solid black',
+            borderBottom: '2px solid white',
             transition: 'width 0.3s ease',
         },
         '&:hover:after': {
@@ -79,7 +79,7 @@ const useStyles = makeStyles({
         position: 'relative',
         float: 'left',
         textDecoration: 'none',
-        color: 'black',
+        color: 'white',
         marginLeft: '45px'
     },
     navItem1: {
@@ -89,7 +89,7 @@ const useStyles = makeStyles({
         fontSize: '18px',
         position: 'relative',
         float: 'right',
-        color: 'black',
+        color: 'white',
         paddingBottom: '5px',
         '&:after': {
             content: '""',
@@ -98,7 +98,7 @@ const useStyles = makeStyles({
             left: '0',
             height: '0',
             width: '0%',
-            borderBottom: '2px solid black',
+            borderBottom: '2px solid white',
             transition: 'width 0.3s ease',
         },
         '&:hover:after': {
