@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ScheduleComponent, Day, Week, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
+import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 import '../../App.css'
 
 const Calendar = (props) => {
@@ -51,7 +51,7 @@ const Calendar = (props) => {
     return (
         <div>
             <ScheduleComponent height='550px' selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: newWholeJson }}>
-                <Inject services={[Day, Week, Month, Agenda]} />
+                <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
                 <ViewsDirective>
                     <ViewDirective option='Day' />
                     <ViewDirective option='Week' />

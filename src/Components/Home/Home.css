@@ -1,0 +1,94 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.root{
+    /* background-image: url("../../images/handsin.png"); */
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+}
+
+.root h1{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    font-size: 52px;
+}
+
+.below{
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+.below p{
+    padding-top: 5%;
+    position: absolute;
+    top: 118%;
+    width: 45%;
+}
+
+.about{
+    height: 30vh;
+    width: 100%;;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #00B4DB;
+    background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); 
+    background: linear-gradient(to right, #0083B0, #00B4DB);
+    position: absolute;
+    top: 170%;
+}
+.about p{
+    position: absolute;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    width: 80%;
+    margin: auto;
+    padding-left: 10%;
+}
+
+.vision {
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    margin: 'auto';
+    padding-left: 10%;
+    padding-bottom: 3%;
+    padding-top: 2%;
+}
+
+
+.aboutH{
+    padding: 25px;
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.image{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    height: 60vh;
+    /* background-image: url('../../images/teamwork.jpg'); */
+    background-repeat: no-repeat;
+    margin-top: 85vh;
+}
+
+.below h1{
+    padding-top: 20px;
+    position: absolute;
+    left: 25%;
+    top: 105%;
+    transform: translate(-50%, 0%);
+    
+}
