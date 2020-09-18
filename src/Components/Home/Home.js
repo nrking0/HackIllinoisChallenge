@@ -7,7 +7,7 @@ const Home = (props) => {
   return (
     <>
       <div className="root">
-        <h1>HackThis</h1>
+        <h1>Welcome to HackThis!</h1>
         <div className="below">
           <div className="about">
             <div className="aboutH">About</div>
