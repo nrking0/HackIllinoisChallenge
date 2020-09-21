@@ -10,7 +10,7 @@ const Home = (props) => {
       <div className="root">
         <h1>Welcome to HackThis!</h1>
         <div className="makeBig">
-          <ExpandMoreIcon fontSize="large" className="arrow" color="secondary" />
+          <ExpandMoreIcon className="arrow" fontSize="large" color="inherit"/>
         </div>
         <div className="below">
           <div className="about">

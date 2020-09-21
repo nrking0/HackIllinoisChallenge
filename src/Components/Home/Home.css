@@ -24,11 +24,12 @@
 }
 
 .arrow {
+    color: white;
     position: absolute;
     left: 50%;
     top: 95%;
     transform: translate(-50%, 0%);
-    font-size: large;
+    font-size: xx-large;
 }
 
 .makeBig {
