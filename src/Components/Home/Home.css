@@ -3,11 +3,12 @@
 }
 
 
+
 .root{
     background-image: url("../../Images/coding.png");
     background-position: center;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
 }
 
 .root h1{
@@ -19,6 +20,20 @@
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 52px;
+    text-align: center;
+}
+
+.arrow {
+    position: absolute;
+    left: 50%;
+    top: 95%;
+    transform: translate(-50%, 0%);
+    font-size: large;
+}
+
+.makeBig {
+    width: 200px;
+    height: 200px;
 }
 
 .below{
@@ -43,7 +58,8 @@
     background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); 
     background: linear-gradient(to right, #0083B0, #00B4DB);
     position: absolute;
-    top: 90vh;
+    top: 100vh;
+    padding-bottom: 60px;
 }
 .about p{
     position: absolute;

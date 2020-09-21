@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { AppBar, Toolbar} from '@material-ui/core';
 import ScrollToColor from "./ScrollToColor";
+import './Navbar.css';
 
 
 const useStyles = makeStyles({
@@ -107,6 +108,7 @@ const useStyles = makeStyles({
     }
 });
 
+
 const Navbar = (props) => {
     const classes = useStyles();
     const [home, setHome] = useState(window.location.href.length < 23);
@@ -123,7 +125,7 @@ const Navbar = (props) => {
         <div>
             {home ? (
                 <ScrollToColor homeState={home}>
-                    <AppBar elevation={0} className={classes.root}>
+                    <AppBar elevation={0} className={classes.root} id="root">
                         <Toolbar className={classes.navbar}>
                             <Link onClick={handleHome} className={classes.appName} to="/">HackIllinois</Link>
                             <Link onClick={handleLeave} className={classes.navItem} to="/schedule">Schedule</Link>
