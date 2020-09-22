@@ -70,9 +70,9 @@ const useStyles = makeStyles({
         backgroundColor: 'orange',
         paddingBottom: '20px',
         paddingTop: '25px',
-        position: 'sticky',
+        position: '-webkit-sticky',
         width: '100%',
-        height: '0%',
+        height: '15%',
     },
     appName1: {
         marginRight: '100vh',

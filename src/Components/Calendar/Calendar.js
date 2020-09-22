@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
-import '../../App.css'
-import { setRef } from '@material-ui/core';
+import './Calendar.css';
 
 const Calendar = (props) => {
 
-    const [data, setData] = React.useState([]);
-    const [printData, setprintData] = React.useState({});
+    const [data, setData] = useState([]);
 
     var read = true;
 
-    var rando = [
-        {
-            "Id" : "1",
-            "StartTime" : "2020-08-08T12:00:00",
-            "EndTime" : "2020-08-08T15:00:00",
-            "Subject" : "Why?",
-            "Name" : "NOOOOO"
-        }
+    // var rando = [
+    //     {
+    //         "Id": "1",
+    //         "StartTime": "2020-08-08T12:00:00",
+    //         "EndTime": "2020-08-08T15:00:00",
+    //         "Subject": "Why?",
+    //         "Name": "NOOOOO"
+    //     }
 
-    ];
+    // ];
 
     var newWholeJson = [];
 
@@ -48,18 +46,15 @@ const Calendar = (props) => {
                     "Subject": json[j].name,
                     "Description": json[j].description,
                     "StartTime": json[j].startTime,
-                    "EndTime": json[j].endTime
+                    "EndTime": json[j].endTime,
+                    "Location" : "Online"
                 }
                 newWholeJson.push(newJson);
+                data.push(newJson);
             }
             console.log(newWholeJson);
+            setData(data);
             console.log(data);
-
-            // let temp = [];
-            // temp.push(newWholeJson)
-            // console.log(temp[0])
-            // setData(temp[0]);
-            // console.log(data);
         } catch (err) {
             console.error(err.message);
         }
@@ -71,15 +66,29 @@ const Calendar = (props) => {
     }, []);
 
     return (
-        <div>
-                <ScheduleComponent height='880px' currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: newWholeJson }}>
+        <div className="calendar">
+            <h1>HackThis Schedule</h1>
+            {(data.length === 0) ? (
+                <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
                     <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
                     <ViewsDirective>
                         <ViewDirective option='Day' />
                         <ViewDirective option='Week' />
                     </ViewsDirective>
                 </ScheduleComponent>
-            </div>
+            ) :
+                (
+                    <></>
+                )}
+            {/* <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
+                <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+                <ViewsDirective>
+                    <ViewDirective option='Day' />
+                    <ViewDirective option='Week' />
+                </ViewsDirective>
+            </ScheduleComponent> */}
+        </div>
+
     )
 };
 

@@ -1,0 +1,23 @@
+.calendar {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    left: 50%;
+    transform: translate(-50%, 10%);
+    margin-bottom: 5%;
+}
+
+.calendar h1 {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 13%;
+    color: white;
+}
+
+html {
+    background-image: url("../../Images/gradient.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0vh;
+}
