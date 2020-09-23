@@ -32,9 +32,12 @@ const DayView = (props) => {
     function convert(a) {
         var conversion = parseInt(a.substring(0,2));
         console.log(conversion);
+        if(conversion === 12) {
+            return "" + conversion + a.substring(2,5) + " PM";
+        }
         if(conversion > 12) {
             conversion -= 12;
-            return "" + conversion + a.substring(2,5) + " PM"
+            return "" + conversion + a.substring(2,5) + " PM";
         } else {
             return a + " AM";
         }
