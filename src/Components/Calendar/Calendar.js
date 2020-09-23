@@ -4,7 +4,32 @@ import './Calendar.css';
 
 const Calendar = (props) => {
 
+    function useWindowSize() {
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+
+        useEffect(() => {
+            function handleResize() {
+                setWindowSize({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            }
+            window.addEventListener("resize", handleResize);
+            handleResize();
+            return () => window.removeEventListener("resize", handleResize);
+        }, []);
+        return windowSize;
+    }
+
+
+
+
     const [data, setData] = useState([]);
+
+    const size = useWindowSize();
 
     var read = true;
 
@@ -47,7 +72,7 @@ const Calendar = (props) => {
                     "Description": json[j].description,
                     "StartTime": json[j].startTime,
                     "EndTime": json[j].endTime,
-                    "Location" : "Online"
+                    "Location": "Online"
                 }
                 newWholeJson.push(newJson);
                 data.push(newJson);
@@ -66,28 +91,32 @@ const Calendar = (props) => {
     }, []);
 
     return (
-        <div className="calendar">
-            <h1>HackThis Schedule</h1>
-            {(data.length === 0) ? (
-                <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
-                    <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-                    <ViewsDirective>
-                        <ViewDirective option='Day' />
-                        <ViewDirective option='Week' />
-                    </ViewsDirective>
-                </ScheduleComponent>
+        <>
+            {(size.width > 800) ? (
+                <div className="calendar">
+                    <h1>HackThis Schedule</h1>
+                    <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
+                        <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+                        <ViewsDirective>
+                            <ViewDirective option='Day' />
+                            <ViewDirective option='Week' />
+                        </ViewsDirective>
+                    </ScheduleComponent>
+                </div>
             ) :
                 (
-                    <></>
+                    <div className="calendar">
+                        <h1 className="mobile">HackThis Schedule</h1>
+                        <ScheduleComponent height="550px" currentView="Day" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
+                            <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+                            <ViewsDirective>
+                                <ViewDirective option='Day' />
+                                <ViewDirective option='Week' />
+                            </ViewsDirective>
+                        </ScheduleComponent>
+                    </div>
                 )}
-            {/* <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
-                <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-                <ViewsDirective>
-                    <ViewDirective option='Day' />
-                    <ViewDirective option='Week' />
-                </ViewsDirective>
-            </ScheduleComponent> */}
-        </div>
+        </>
 
     )
 };

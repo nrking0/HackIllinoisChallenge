@@ -9,8 +9,8 @@
 
 .calendar h1 {
     text-align: center;
-    margin-bottom: 2%;
-    margin-top: 12%;
+    margin-bottom: 4%;
+    margin-top: 10%;
     color: white;
 }
 
@@ -20,4 +20,11 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     top: 0vh;
+}
+
+.mobile {
+    text-align: center;
+    margin-bottom: 2%;
+    padding-top: 12%;
+    color: white;
 }
