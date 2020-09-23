@@ -29,22 +29,28 @@ const DayView = (props) => {
     var dayArray = props.day;
     console.log(dayArray);
 
+    function convert(a) {
+        var conversion = parseInt(a.substring(0,2));
+        console.log(conversion);
+        if(conversion > 12) {
+            conversion -= 12;
+            return "" + conversion + a.substring(2,5) + " PM"
+        } else {
+            return a + " AM";
+        }
+    }
 
     return (
         <>
             {dayArray.map((event, index) => (
                 <div key={index} className="dayList">
-                    {/* <h3>{event.Subject}</h3>
-                    <h3>{event.Description}</h3> */}
-
-
                     <Card className={classes.root}>
                         <CardContent>
                             <Typography variant="h5" component="h2">
                                 {event.Subject}
                             </Typography>
                             <Typography className={classes.pos} color="inherit">
-                                Time
+                                {convert(event.StartTime.substring(11,16))} - {convert(event.EndTime.substring(11,16))}
                             </Typography>
                             <Typography className={classes.pos} color="inherit">
                                 {event.Location}
