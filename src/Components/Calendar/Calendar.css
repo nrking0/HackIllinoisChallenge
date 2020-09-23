@@ -30,22 +30,31 @@ html {
 }
 
 .below2 {
+    float: left;
     position: relative;
     margin-top: 8%;
     width: 25%;
     left: 50%;
     transform: translate(-110%, 0%);  
+    margin-bottom: 5%;
 }
 
 .below3 {
+    float: right;
     position: relative;
     margin-top: 8%;
     width: 30%;
-    left: 50%;
-    transform: translate(10%, 0%);
+    left: 0%;
+    left: -50%;
+    transform: translate(110%, 0%);
+    margin-bottom: 5%;
 }
 
 .days {
     position: relative;
     width: 100%;
+}
+
+h2 {
+    text-align: center;
 }

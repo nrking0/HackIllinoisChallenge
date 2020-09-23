@@ -28,6 +28,27 @@ const Calendar = (props) => {
 
     function getSelectedDay(int) {
         var b = parseInt(int);
+
+        if (b === 7) {
+            setDayLabel("Friday - August 7th");
+        } else if (b === 8) {
+            setDayLabel("Saturday - August 8th");
+        } else if (b === 9) {
+            setDayLabel("Sunday - August 9th");
+        } else if (b === 10) {
+            setDayLabel("Monday - August 10th");
+        } else if (b === 11) {
+            setDayLabel("Tuesday - August 11th");
+        } else if (b === 12) {
+            setDayLabel("Wednesday - August 12th");
+        } else if (b === 13) {
+            setDayLabel("Thursday - August 13th");
+        } else if (b === 14) {
+            setDayLabel("Friday - August 14th");
+        } else if (b === 15) {
+            setDayLabel("Saturday - August 15th");
+        }
+
         var tempPush = [];
         for (var iterator = 0; iterator < data.length; iterator++) {
             var time = data[iterator].StartTime;
@@ -42,7 +63,9 @@ const Calendar = (props) => {
         setSelectedDate(tempPush);
     }
 
-    const [selectedDay, setSelectedDate] = useState();
+    const [selectedDay, setSelectedDate] = useState([]);
+
+    const [dayLabel, setDayLabel] = useState("Select a Day");
 
     const [data, setData] = useState();
 
@@ -123,6 +146,7 @@ const Calendar = (props) => {
                         <Button onClick={() => getSelectedDay(15)} className="days" size="large">Saturday - August 15th</Button>
                     </div>
                     <div className="below3">
+                        <h2>{dayLabel}</h2>
                         <DayView day={selectedDay} />
                     </div>
                 </div>
