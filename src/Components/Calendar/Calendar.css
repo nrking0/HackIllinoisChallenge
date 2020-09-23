@@ -58,3 +58,11 @@ html {
 h2 {
     text-align: center;
 }
+
+.arrow2 {
+    color: white;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 180%);
+    font-size: xx-large;
+}

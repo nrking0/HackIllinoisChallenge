@@ -3,6 +3,7 @@ import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, ViewsDir
 import './Calendar.css';
 import { Button } from '@material-ui/core'
 import DayView from '../DayView/DayView.js';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const Calendar = (props) => {
 
@@ -133,6 +134,7 @@ const Calendar = (props) => {
                                 <ViewDirective option='Week' />
                             </ViewsDirective>
                         </ScheduleComponent>
+                        <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit"/>
                     </div>
                     <div className="below2">
                         <Button onClick={() => getSelectedDay(7)} className="days" size="large">Friday - August 7th</Button>
