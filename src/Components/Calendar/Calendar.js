@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 import './Calendar.css';
 import { Button } from '@material-ui/core'
+import DayView from '../DayView/DayView.js';
 
 const Calendar = (props) => {
 
@@ -33,7 +34,7 @@ const Calendar = (props) => {
             var j = Date.parse(time);
             var a = new Date(j);
             var date = a.getDate();
-            if(date === b) {
+            if (date === b) {
                 tempPush.push(data[iterator]);
             }
         }
@@ -111,15 +112,18 @@ const Calendar = (props) => {
                         </ScheduleComponent>
                     </div>
                     <div className="below2">
-                        <Button onClick = {()=>getSelectedDay(7)} className="days" size="large">Friday - August 7th</Button>
-                        <Button onClick = {()=>getSelectedDay(8)} className="days" size="large">Saturday - August 8th</Button>
-                        <Button onClick = {()=>getSelectedDay(9)} className="days" size="large">Sunday - August 9th</Button>
-                        <Button onClick = {()=>getSelectedDay(10)} className="days" size="large">Monday - August 10th</Button>
-                        <Button onClick = {()=>getSelectedDay(11)} className="days" size="large">Tuesday - August 11th</Button>
-                        <Button onClick = {()=>getSelectedDay(12)} className="days" size="large">Wednesday - August 12th</Button>
-                        <Button onClick = {()=>getSelectedDay(13)} className="days" size="large">Thursday - August 13th</Button>
-                        <Button onClick = {()=>getSelectedDay(14)} className="days" size="large">Friday - August 14th</Button>
-                        <Button onClick = {()=>getSelectedDay(15)} className="days" size="large">Saturday - August 15th</Button>
+                        <Button onClick={() => getSelectedDay(7)} className="days" size="large">Friday - August 7th</Button>
+                        <Button onClick={() => getSelectedDay(8)} className="days" size="large">Saturday - August 8th</Button>
+                        <Button onClick={() => getSelectedDay(9)} className="days" size="large">Sunday - August 9th</Button>
+                        <Button onClick={() => getSelectedDay(10)} className="days" size="large">Monday - August 10th</Button>
+                        <Button onClick={() => getSelectedDay(11)} className="days" size="large">Tuesday - August 11th</Button>
+                        <Button onClick={() => getSelectedDay(12)} className="days" size="large">Wednesday - August 12th</Button>
+                        <Button onClick={() => getSelectedDay(13)} className="days" size="large">Thursday - August 13th</Button>
+                        <Button onClick={() => getSelectedDay(14)} className="days" size="large">Friday - August 14th</Button>
+                        <Button onClick={() => getSelectedDay(15)} className="days" size="large">Saturday - August 15th</Button>
+                    </div>
+                    <div className="below3">
+                        <DayView day={selectedDay} />
                     </div>
                 </div>
             ) :

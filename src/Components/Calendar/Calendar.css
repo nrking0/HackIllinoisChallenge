@@ -34,9 +34,15 @@ html {
     margin-top: 8%;
     width: 25%;
     left: 50%;
-    transform: translate(-110%, 0%);
+    transform: translate(-110%, 0%);  
+}
 
-    
+.below3 {
+    position: relative;
+    margin-top: 8%;
+    width: 30%;
+    left: 50%;
+    transform: translate(10%, 0%);
 }
 
 .days {
