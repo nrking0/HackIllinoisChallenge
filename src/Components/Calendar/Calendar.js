@@ -49,17 +49,6 @@ const Calendar = (props) => {
 
     var read = true;
 
-    // var rando = [
-    //     {
-    //         "Id": "1",
-    //         "StartTime": "2020-08-08T12:00:00",
-    //         "EndTime": "2020-08-08T15:00:00",
-    //         "Subject": "Why?",
-    //         "Name": "NOOOOO"
-    //     }
-
-    // ];
-
     var newWholeJson = [];
 
     const getEvents = async () => {
@@ -93,7 +82,6 @@ const Calendar = (props) => {
                     "Location": "Online"
                 }
                 newWholeJson.push(newJson);
-                //data.push(newJson);
             }
             console.log(newWholeJson);
             setData(newWholeJson);
