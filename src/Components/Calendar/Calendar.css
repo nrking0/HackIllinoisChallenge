@@ -53,6 +53,7 @@ html {
 .days {
     position: relative;
     width: 100%;
+    color: white;
 }
 
 h2 {

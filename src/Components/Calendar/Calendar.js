@@ -4,8 +4,21 @@ import './Calendar.css';
 import { Button } from '@material-ui/core'
 import DayView from '../DayView/DayView.js';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles({
+    dayss: {
+        color: 'white',
+        position: 'relative',
+        left: '50%',
+        transform: 'translate(-50%, 0)',
+        width: '80%',
+    }
+  });
 
 const Calendar = (props) => {
+
+    const classes = useStyles();
 
     function useWindowSize() {
         const [windowSize, setWindowSize] = useState({
@@ -137,15 +150,15 @@ const Calendar = (props) => {
                         <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit"/>
                     </div>
                     <div className="below2">
-                        <Button onClick={() => getSelectedDay(7)} className="days" size="large">Friday - August 7th</Button>
-                        <Button onClick={() => getSelectedDay(8)} className="days" size="large">Saturday - August 8th</Button>
-                        <Button onClick={() => getSelectedDay(9)} className="days" size="large">Sunday - August 9th</Button>
-                        <Button onClick={() => getSelectedDay(10)} className="days" size="large">Monday - August 10th</Button>
-                        <Button onClick={() => getSelectedDay(11)} className="days" size="large">Tuesday - August 11th</Button>
-                        <Button onClick={() => getSelectedDay(12)} className="days" size="large">Wednesday - August 12th</Button>
-                        <Button onClick={() => getSelectedDay(13)} className="days" size="large">Thursday - August 13th</Button>
-                        <Button onClick={() => getSelectedDay(14)} className="days" size="large">Friday - August 14th</Button>
-                        <Button onClick={() => getSelectedDay(15)} className="days" size="large">Saturday - August 15th</Button>
+                        <Button onClick={() => getSelectedDay(7)} color="inherit" className={classes.dayss} size="large">Friday - August 7th</Button>
+                        <Button onClick={() => getSelectedDay(8)} color="inherit" className={classes.dayss} size="large">Saturday - August 8th</Button>
+                        <Button onClick={() => getSelectedDay(9)} className={classes.dayss} size="large">Sunday - August 9th</Button>
+                        <Button onClick={() => getSelectedDay(10)} className={classes.dayss} size="large">Monday - August 10th</Button>
+                        <Button onClick={() => getSelectedDay(11)} className={classes.dayss} size="large">Tuesday - August 11th</Button>
+                        <Button onClick={() => getSelectedDay(12)} className={classes.dayss} size="large">Wednesday - August 12th</Button>
+                        <Button onClick={() => getSelectedDay(13)} className={classes.dayss} size="large">Thursday - August 13th</Button>
+                        <Button onClick={() => getSelectedDay(14)} className={classes.dayss} size="large">Friday - August 14th</Button>
+                        <Button onClick={() => getSelectedDay(15)} className={classes.dayss} size="large">Saturday - August 15th</Button>
                     </div>
                     <div className="below3">
                         <h2>{dayLabel}</h2>
