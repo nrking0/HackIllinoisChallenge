@@ -28,3 +28,18 @@ html {
     padding-top: 12%;
     color: white;
 }
+
+.below2 {
+    position: relative;
+    margin-top: 8%;
+    width: 25%;
+    left: 50%;
+    transform: translate(-110%, 0%);
+
+    
+}
+
+.days {
+    position: relative;
+    width: 100%;
+}
