@@ -109,6 +109,9 @@ const Calendar = (props) => {
             const response = await fetch("https://api.hackillinois.org/event/");
             const jsonData = await response.json();
             console.log(jsonData);
+            jsonData.events.sort(function(a,b) {
+                return a.unix-b.unix;
+            });
             for (var i = 0; i < jsonData.events.length; i++) {
                 var obj = jsonData.events[i];
                 var time = obj.startTime;
