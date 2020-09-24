@@ -67,3 +67,11 @@ h2 {
     transform: translate(-50%, 180%);
     font-size: xx-large;
 }
+
+.belowDayView {
+    position: relative;
+    width: 80%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 20%;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject, ViewsDirective, ViewDirective } from '@syncfusion/ej2-react-schedule';
 import './Calendar.css';
-import { Button } from '@material-ui/core'
+import { Button, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core'
 import DayView from '../DayView/DayView.js';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
@@ -13,8 +13,17 @@ const useStyles = makeStyles({
         left: '50%',
         transform: 'translate(-50%, 0)',
         width: '80%',
-    }
-  });
+    },
+    formControl: {
+        margin: '5%',
+        width: '80%',
+        position: 'relative',
+        top: 80,
+        left: '45%',
+        transform: 'translate(-50%, 0)',
+       
+      }
+});
 
 const Calendar = (props) => {
 
@@ -64,6 +73,7 @@ const Calendar = (props) => {
         }
 
         var tempPush = [];
+
         for (var iterator = 0; iterator < data.length; iterator++) {
             var time = data[iterator].StartTime;
             var j = Date.parse(time);
@@ -77,6 +87,11 @@ const Calendar = (props) => {
         setSelectedDate(tempPush);
     }
 
+    const handleChange = (event) => {
+        getSelectedDay(event.target.value);
+        setDayLabel(event.target.value);
+    };
+
     const [selectedDay, setSelectedDate] = useState([]);
 
     const [dayLabel, setDayLabel] = useState("Select a Day");
@@ -84,8 +99,6 @@ const Calendar = (props) => {
     const [data, setData] = useState();
 
     const size = useWindowSize();
-
-    var read = true;
 
     var newWholeJson = [];
 
@@ -139,15 +152,15 @@ const Calendar = (props) => {
             {(size.width > 800) ? (
                 <div>
                     <div className="calendar">
-                        <h1>HackThis Schedule</h1>
-                        <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
+                        <h1>HackIllinois Schedule</h1>
+                        <ScheduleComponent height="550px" currentView="Week" selectedDate={new Date(2020, 7, 7)} readonly="true" eventSettings={{ dataSource: data }}>
                             <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
                             <ViewsDirective>
                                 <ViewDirective option='Day' />
                                 <ViewDirective option='Week' />
                             </ViewsDirective>
                         </ScheduleComponent>
-                        <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit"/>
+                        <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit" />
                     </div>
                     <div className="below2">
                         <Button onClick={() => getSelectedDay(7)} color="inherit" className={classes.dayss} size="large">Friday - August 7th</Button>
@@ -167,15 +180,41 @@ const Calendar = (props) => {
                 </div>
             ) :
                 (
-                    <div className="calendar">
-                        <h1 className="mobile">HackThis Schedule</h1>
-                        <ScheduleComponent height="550px" currentView="Day" selectedDate={new Date(2020, 7, 8)} readonly={{ read }} eventSettings={{ dataSource: data }}>
-                            <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
-                            <ViewsDirective>
-                                <ViewDirective option='Day' />
-                                <ViewDirective option='Week' />
-                            </ViewsDirective>
-                        </ScheduleComponent>
+                    <div>
+                        <div className="calendar">
+                            <h1 className="mobile">HackIllinois Schedule</h1>
+                            <ScheduleComponent height="550px" currentView="Day" selectedDate={new Date(2020, 7, 7)} readonly="true" eventSettings={{ dataSource: data }}>
+                                <Inject services={[Day, Week, WorkWeek, Month, Agenda]} />
+                                <ViewsDirective>
+                                    <ViewDirective option='Day' />
+                                    <ViewDirective option='Week' />
+                                </ViewsDirective>
+                            </ScheduleComponent>
+                        </div>
+                        <div className="belowMobile">
+                            <FormControl className={classes.formControl} color="primary">
+                                <InputLabel id="demo-simple-select-label">Day</InputLabel>
+                                <Select
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={dayLabel}
+                                    onChange={handleChange}
+                                >
+                                    <MenuItem value={7}>Friday - August 7th</MenuItem>
+                                    <MenuItem value='8'>Saturday - August 8th</MenuItem>
+                                    <MenuItem value='9'>Sunday - August 9th</MenuItem>
+                                    <MenuItem value='10'>Monday - August 10th</MenuItem>
+                                    <MenuItem value='11'>Tuesday - August 11th</MenuItem>
+                                    <MenuItem value='12'>Wednesday - August 12th</MenuItem>
+                                    <MenuItem value='13'>Thursday - August 13th</MenuItem>
+                                    <MenuItem value='14'>Friday - August 14th</MenuItem>
+                                    <MenuItem value='15'>Saturday - August 15th</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </div>
+                        <div className="belowDayView">
+                            <DayView day={selectedDay} />
+                        </div>
                     </div>
                 )}
         </>
