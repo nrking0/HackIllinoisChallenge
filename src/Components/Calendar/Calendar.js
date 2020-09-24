@@ -21,8 +21,8 @@ const useStyles = makeStyles({
         top: 80,
         left: '45%',
         transform: 'translate(-50%, 0)',
-       
-      }
+
+    }
 });
 
 const Calendar = (props) => {
@@ -109,8 +109,8 @@ const Calendar = (props) => {
             const response = await fetch("https://api.hackillinois.org/event/");
             const jsonData = await response.json();
             console.log(jsonData);
-            jsonData.events.sort(function(a,b) {
-                return a.unix-b.unix;
+            jsonData.events.sort(function (a, b) {
+                return a.unix - b.unix;
             });
             for (var i = 0; i < jsonData.events.length; i++) {
                 var obj = jsonData.events[i];
@@ -166,7 +166,7 @@ const Calendar = (props) => {
                             </ViewsDirective>
                         </ScheduleComponent>
                         <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit" />
-                    <h1>Day-by-Day Schedule</h1>
+                        <h1>Day-by-Day Schedule</h1>
                     </div>
                     <div className="below2">
                         <Button onClick={() => getSelectedDay(7)} color="inherit" className={classes.dayss} size="large">Friday - August 7th</Button>
@@ -204,8 +204,7 @@ const Calendar = (props) => {
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
                                     value={dayLabel2}
-                                    onChange={handleChange}
-                                >
+                                    onChange={handleChange}>
                                     <MenuItem value={7}>Friday - August 7th</MenuItem>
                                     <MenuItem value={8}>Saturday - August 8th</MenuItem>
                                     <MenuItem value={9}>Sunday - August 9th</MenuItem>
