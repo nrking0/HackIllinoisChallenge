@@ -8,7 +8,7 @@ const Home = (props) => {
   return (
     <>
       <div className="root">
-        <h1>Welcome to HackThis!</h1>
+        <h1>Welcome to HackIllinois!</h1>
         <div className="makeBig">
           <ExpandMoreIcon className="arrow" fontSize="large" color="inherit"/>
         </div>

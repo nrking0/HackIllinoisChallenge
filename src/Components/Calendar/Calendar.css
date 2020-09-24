@@ -25,7 +25,7 @@ html {
 .mobile {
     text-align: center;
     margin-bottom: 2%;
-    padding-top: 12%;
+    padding-top: 6%;
     color: white;
 }
 
@@ -66,6 +66,7 @@ h2 {
     left: 50%;
     transform: translate(-50%, 180%);
     font-size: xx-large;
+    margin-bottom: 5%;
 }
 
 .belowDayView {

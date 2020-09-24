@@ -89,8 +89,10 @@ const Calendar = (props) => {
 
     const handleChange = (event) => {
         getSelectedDay(event.target.value);
-        setDayLabel(event.target.value);
+        setDayLabel2(event.target.value);
     };
+
+    const [dayLabel2, setDayLabel2] = useState([]);
 
     const [selectedDay, setSelectedDate] = useState([]);
 
@@ -161,6 +163,7 @@ const Calendar = (props) => {
                             </ViewsDirective>
                         </ScheduleComponent>
                         <ExpandMoreIcon className="arrow2" fontSize="large" color="inherit" />
+                    <h1>Day-by-Day Schedule</h1>
                     </div>
                     <div className="below2">
                         <Button onClick={() => getSelectedDay(7)} color="inherit" className={classes.dayss} size="large">Friday - August 7th</Button>
@@ -197,18 +200,18 @@ const Calendar = (props) => {
                                 <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={dayLabel}
+                                    value={dayLabel2}
                                     onChange={handleChange}
                                 >
                                     <MenuItem value={7}>Friday - August 7th</MenuItem>
-                                    <MenuItem value='8'>Saturday - August 8th</MenuItem>
-                                    <MenuItem value='9'>Sunday - August 9th</MenuItem>
-                                    <MenuItem value='10'>Monday - August 10th</MenuItem>
-                                    <MenuItem value='11'>Tuesday - August 11th</MenuItem>
-                                    <MenuItem value='12'>Wednesday - August 12th</MenuItem>
-                                    <MenuItem value='13'>Thursday - August 13th</MenuItem>
-                                    <MenuItem value='14'>Friday - August 14th</MenuItem>
-                                    <MenuItem value='15'>Saturday - August 15th</MenuItem>
+                                    <MenuItem value={8}>Saturday - August 8th</MenuItem>
+                                    <MenuItem value={9}>Sunday - August 9th</MenuItem>
+                                    <MenuItem value={10}>Monday - August 10th</MenuItem>
+                                    <MenuItem value={11}>Tuesday - August 11th</MenuItem>
+                                    <MenuItem value={12}>Wednesday - August 12th</MenuItem>
+                                    <MenuItem value={13}>Thursday - August 13th</MenuItem>
+                                    <MenuItem value={14}>Friday - August 14th</MenuItem>
+                                    <MenuItem value={15}>Saturday - August 15th</MenuItem>
                                 </Select>
                             </FormControl>
                         </div>
