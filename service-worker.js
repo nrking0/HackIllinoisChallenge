@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/HackIllinoisChallenge/precache-manifest.bc6505667351700028b0a14e3f2c829a.js"
+  "/HackIllinoisChallenge/precache-manifest.f49e2b6406273f6c977823160facd03f.js"
 );
 
 self.addEventListener('message', (event) => {
