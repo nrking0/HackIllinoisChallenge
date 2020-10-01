@@ -13,9 +13,8 @@ function App() {
       <Navbar />
       <Switch>
         <div className={classes.root}>
-          <Route exact path="/"><Home /></Route>
-          <Route path="/HackIllinoisChallenge"><Home /></Route>
-          <Route path="/schedule"><Calendar /></Route>
+          <Route exact path="/HackIllinoisChallenge"><Home /></Route>
+          <Route path="/HackIllinoisChallenge/schedule"><Calendar /></Route>
         </div>
       </Switch>
     </Router>

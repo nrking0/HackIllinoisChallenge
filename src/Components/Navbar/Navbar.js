@@ -111,7 +111,7 @@ const useStyles = makeStyles({
 
 const Navbar = (props) => {
     const classes = useStyles();
-    const [home, setHome] = useState(window.location.href.length < 23);
+    const [home, setHome] = useState(window.location.href.length < 50);
 
     const handleHome = e => {
         setHome(true)
@@ -127,16 +127,16 @@ const Navbar = (props) => {
                 <ScrollToColor homeState={home}>
                     <AppBar elevation={0} className={classes.root} id="root">
                         <Toolbar className={classes.navbar}>
-                            <Link onClick={handleHome} className={classes.appName} to="/">HackIllinois</Link>
-                            <Link onClick={handleLeave} className={classes.navItem} to="/schedule">Schedule</Link>
+                            <Link onClick={handleHome} className={classes.appName} to="/HackIllinoisChallenge">HackIllinois</Link>
+                            <Link onClick={handleLeave} className={classes.navItem} to="/HackIllinoisChallenge/schedule">Schedule</Link>
                         </Toolbar>
                     </AppBar>
                 </ScrollToColor>
             ) : (
                     <AppBar elevation={0} className={classes.root1}>
                         <Toolbar className={classes.navbar}>
-                            <Link onClick={handleHome} className={classes.appName1} to="/">HackIllinois</Link>
-                            <Link onClick={handleLeave} className={classes.navItem1} to="/schedule">Schedule</Link>
+                            <Link onClick={handleHome} className={classes.appName1} to="/HackIllinoisChallenge">HackIllinois</Link>
+                            <Link onClick={handleLeave} className={classes.navItem1} to="/HackIllinoisChallenge/schedule">Schedule</Link>
                         </Toolbar>
                     </AppBar>
                 )}
