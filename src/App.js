@@ -14,6 +14,7 @@ function App() {
       <Switch>
         <div className={classes.root}>
           <Route exact path="/"><Home /></Route>
+          <Route path="/HackIllinoisChallenge"><Home /></Route>
           <Route path="/schedule"><Calendar /></Route>
         </div>
       </Switch>
