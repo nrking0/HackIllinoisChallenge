@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7bc6dcf8713547758e1491ab1efd0986",
+    "revision": "8c50ce2577150c908e624bf2999cbb42",
     "url": "/HackIllinoisChallenge/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HackIllinoisChallenge/static/css/2.a52ed168.chunk.css"
   },
   {
-    "revision": "3c1bd3c80d0021213378",
-    "url": "/HackIllinoisChallenge/static/css/main.5baa613f.chunk.css"
+    "revision": "d96da5de170af9f2895c",
+    "url": "/HackIllinoisChallenge/static/css/main.a2cd5474.chunk.css"
   },
   {
     "revision": "6c3482a9b1fa187963b9",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/HackIllinoisChallenge/static/js/2.3f6c0c23.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3c1bd3c80d0021213378",
-    "url": "/HackIllinoisChallenge/static/js/main.adea43fa.chunk.js"
+    "revision": "d96da5de170af9f2895c",
+    "url": "/HackIllinoisChallenge/static/js/main.2972ccc6.chunk.js"
   },
   {
     "revision": "d1c3441fcea031d2a749",
