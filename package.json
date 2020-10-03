@@ -1,5 +1,5 @@
 {
-  "homepage" : "http://nrking0.github.io/HackIllinoisChallenge",
+  "homepage": "http://nrking0.github.io/HackIllinoisChallenge",
   "name": "schedule",
   "version": "0.1.0",
   "private": true,
@@ -13,13 +13,12 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
-    "react-responsive-navbar": "^1.0.11",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
